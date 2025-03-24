@@ -11,8 +11,8 @@ namespace Proiect_PIU
         public int index_intrebare;
         public string enunt; //iau enuntul intrebarii conform index_intrebare
         public string variante_raspuns; //conform index_intrebare iau si varianta de raspuns aferenta enuntului
-        public char indice_raspuns_corect; // raspunsul la intrebare va consta dintr un indice (a,b,c) la finaul
-                                           // enuntului in fisierul cu intrebari
+        public char indice_raspuns_corect; // raspunsul la intrebare va consta dintr un indice (a,b,c) la 
+                                            // inceputul fiecarui raspuns din Raspunsuri.txt
 
         // o sa am o functie de genul ManagerIntrebare(Index) care o sa ia ca parametru index ul si apoi 
         //se va uita pe fisierul intrebari.txt dupa intrebarea cu indexul potrivit
