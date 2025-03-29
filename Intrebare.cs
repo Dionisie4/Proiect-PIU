@@ -9,13 +9,14 @@ namespace Proiect_PIU
 {
     class Intrebare : Test 
     {
-        public void AfiseazaIntrebarea(int index_intrebare)
+        private static string calea_fisier = "Intrebari.txt";
+        
+        public static void AfiseazaIntrebarea(int index_intrebare)
         {
-            string calea_fisier = "Intrebari.txt";
 
             if (!File.Exists(calea_fisier))
             {
-                Console.WriteLine("Fisierul nu exista");
+                Console.WriteLine("Fisierul cu intrebari nu exista");
                 return;
             }
 

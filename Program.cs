@@ -12,9 +12,15 @@ namespace Proiect_PIU
         static void Main(string[] args)
         {
             Intrebare i1 = new Intrebare();
-            i1.AfiseazaIntrebarea(1);
-            i1.AfiseazaIntrebarea(2);
-            
+            Intrebare.AfiseazaIntrebarea(1);
+            Raspunsuri.AfiseazaRaspunsuri(1);
+            AfiseazaSetul(2);
+
         }
+            static void AfiseazaSetul(int index_intrebare)
+            {
+                Intrebare.AfiseazaIntrebarea(index_intrebare);
+                Raspunsuri.AfiseazaRaspunsuri(index_intrebare);
+            }
     }
 }
