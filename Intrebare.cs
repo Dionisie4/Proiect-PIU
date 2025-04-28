@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Proiect_PIU
 {
-    class Intrebare : Test 
+    class Intrebare
     {
         private static string calea_fisier = "Intrebari.txt";
         
