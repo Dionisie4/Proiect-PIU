@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Windows.Forms;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,16 +14,11 @@ namespace Proiect_PIU
         static void Main(string[] args)
         {
 
-            Logare.Login();
-            
-            AfiseazaSetul(1);
-            AfiseazaSetul(2);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new LoginForm());
 
         }
-            static void AfiseazaSetul(int index_intrebare)
-            {
-                Intrebare.AfiseazaIntrebarea(index_intrebare);
-                Raspunsuri.AfiseazaRaspunsuri(index_intrebare);
-            }
+           
     }
 }

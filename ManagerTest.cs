@@ -23,15 +23,11 @@ namespace Proiect_PIU
 
         public string GetIntrebare()
         {
-            if (indexCurent >= liniiTest.Count) return null; // Test terminat
+            if (indexCurent >= liniiTest.Count || liniiTest.Count == 0) return null;
 
-            if (char.IsDigit(liniiTest[indexCurent][0])) // E o întrebare
-            {
-                string intrebare = liniiTest[indexCurent];
-                indexCurent++;
-                return intrebare;
-            }
-            return null;
+            string intrebare = liniiTest[indexCurent];
+            indexCurent++;
+            return intrebare;
         }
 
         public List<string> GetRaspunsuri(out string raspunsCorect)
@@ -50,17 +46,21 @@ namespace Proiect_PIU
 
             }
             indexCurent += 4; // Trecem la următoarea întrebare
+            
             return raspunsuri;
         }
 
         public void VerificaRaspuns(string raspunsUser, string raspunsCorect)
         {
-            if (raspunsUser == raspunsCorect) punctaj++;
+            if (string.Equals(raspunsUser.Trim().ToLower(), raspunsCorect.Trim().ToLower()))
+            {
+                punctaj++;
+            }
         }
 
         public int GetPunctajFinal()
         {
-            return punctaj + 1; // Punct din oficiu
+            return punctaj;
         }
     }
 }

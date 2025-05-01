@@ -11,19 +11,12 @@ namespace Proiect_PIU
     {
         private static string cale = "Utilizatori.txt";
 
-        public static bool Login()
+        public static bool Login(string nume, string parola, out List<int> note)
         {
-            Console.Write("Introdu numele: ");
-            string nume = Console.ReadLine();
-
-            Console.Write("Introdu parola: ");
-            string parola = Console.ReadLine();
-
-            List<int> note = new List<int>();
+            note = new List<int>();
 
             if (!File.Exists(cale))
             {
-                Console.WriteLine("Fișierul cu utilizatori nu există!");
                 return false;
             }
 
@@ -39,12 +32,10 @@ namespace Proiect_PIU
                     if (numeDinFisier == nume && parolaDinFisier == parola)
                     {
                         note = noteDinFisier.Split(',').Select(int.Parse).ToList();
-                        Console.WriteLine($"Autentificare reușită! Notele anterioare: {string.Join(", ", note)}");
                         return true;
                     }
                 }
             }
-            Console.WriteLine("Nume sau Parolă greșite!");
             return false;
         }
 
