@@ -13,17 +13,25 @@ namespace Proiect_PIU
     public partial class TestForm: Form
     {
         private Test test;
-        public TestForm()
+        private string numeUtilizator;
+        private string parolaUtilizator;
+
+        public TestForm(string nume, string parola)
         {
             InitializeComponent();
             test = new Test("Test.txt");
+            numeUtilizator = nume;
+            parolaUtilizator = parola;
             IncarcaIntrebare();
         }
         private void IncarcaIntrebare()
         {
+            
             if (!test.IncarcaIntrebare())
             {
-                lblIntrebare.Text = $"Test terminat! Ai obtinut {test.GetPunctajFinal()}/10";
+                test.SalveazaNota(numeUtilizator, parolaUtilizator); // Salvăm nota utilizatorului
+
+                lblIntrebare.Text = $"Test terminat! Ai obținut {test.GetPunctajFinal()}/10.";
                 grpRaspunsuri.Enabled = false;
                 btnNext.Enabled = false;
                 return;

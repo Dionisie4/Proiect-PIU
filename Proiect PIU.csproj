@@ -45,7 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Intrebare.cs" />
     <Compile Include="Logare.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -56,7 +55,6 @@
     <Compile Include="ManagerTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Raspunsuri.cs" />
     <Compile Include="Test.cs" />
     <Compile Include="TestForm.cs">
       <SubType>Form</SubType>

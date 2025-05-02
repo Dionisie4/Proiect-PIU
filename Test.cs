@@ -19,6 +19,11 @@ namespace Proiect_PIU
             managerTest = new ManagerTest(caleFisier);
         }
 
+        public void SalveazaNota(string numeUtilizator, string parolaUtilizator)
+        {
+            managerTest.SalveazaNota(numeUtilizator, parolaUtilizator);
+        }
+
         public bool IncarcaIntrebare()
         {
             IntrebareCurenta = managerTest.GetIntrebare();

@@ -19,22 +19,22 @@ namespace Proiect_PIU
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string nume = txtNume.Text.Trim();
-            string parola = txtParola.Text.Trim();
-            List<int> note;
+            string numeUtilizator = txtNume.Text;
+            string parolaUtilizator = txtParola.Text;
 
-            if (Logare.Login(nume, parola, out note))
+            ManagerTest managerTest = new ManagerTest("Utilizatori.txt");
+
+            if (managerTest.VerificaAutentificare(numeUtilizator, parolaUtilizator))
             {
-                TestForm testform = new TestForm();
-                testform.Show();
+                
+                TestForm testForm = new TestForm(numeUtilizator, parolaUtilizator); // Transmitem utilizatorul corect
+                testForm.Show();
                 this.Hide();
-
             }
             else
             {
-                lblEroare.Text = "Nume sau parola gresite!";
-                lblEroare.ForeColor = Color.Red;
-            }    
+                MessageBox.Show("Autentificare eșuată! Verifică numele și parola.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
