@@ -16,9 +16,13 @@ namespace Proiect_PIU
         public ManagerTest(string caleFisier)
         {
             if (File.Exists(caleFisier))
+            {
                 liniiTest = File.ReadAllLines(caleFisier).ToList();
+            }
             else
+            {
                 liniiTest = new List<string>();
+            }
         }
 
         public string GetIntrebare()
@@ -45,10 +49,10 @@ namespace Proiect_PIU
 
                 raspunsuri.Add(raspunsAfisat);
                 if (esteCorect)
-                    raspunsCorect = raspunsAfisat.Split(')')[0]; // Extragem litera
+                    raspunsCorect = raspunsAfisat.Split(')')[0]; 
 
             }
-            indexCurent += 4; // Trecem la următoarea întrebare
+            indexCurent += 1;
             
             return raspunsuri;
         }

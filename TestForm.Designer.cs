@@ -30,10 +30,10 @@
         {
             this.lblIntrebare = new System.Windows.Forms.Label();
             this.grpRaspunsuri = new System.Windows.Forms.GroupBox();
-            this.rdbA = new System.Windows.Forms.RadioButton();
-            this.rdbB = new System.Windows.Forms.RadioButton();
-            this.rdbC = new System.Windows.Forms.RadioButton();
             this.rdbD = new System.Windows.Forms.RadioButton();
+            this.rdbA = new System.Windows.Forms.RadioButton();
+            this.rdbC = new System.Windows.Forms.RadioButton();
+            this.rdbB = new System.Windows.Forms.RadioButton();
             this.btnNext = new System.Windows.Forms.Button();
             this.grpRaspunsuri.SuspendLayout();
             this.SuspendLayout();
@@ -54,9 +54,19 @@
             this.grpRaspunsuri.Controls.Add(this.rdbB);
             this.grpRaspunsuri.Location = new System.Drawing.Point(61, 99);
             this.grpRaspunsuri.Name = "grpRaspunsuri";
-            this.grpRaspunsuri.Size = new System.Drawing.Size(258, 96);
+            this.grpRaspunsuri.Size = new System.Drawing.Size(356, 96);
             this.grpRaspunsuri.TabIndex = 1;
             this.grpRaspunsuri.TabStop = false;
+            // 
+            // rdbD
+            // 
+            this.rdbD.AutoSize = true;
+            this.rdbD.Location = new System.Drawing.Point(0, 77);
+            this.rdbD.Name = "rdbD";
+            this.rdbD.Size = new System.Drawing.Size(14, 13);
+            this.rdbD.TabIndex = 5;
+            this.rdbD.TabStop = true;
+            this.rdbD.UseVisualStyleBackColor = true;
             // 
             // rdbA
             // 
@@ -68,16 +78,6 @@
             this.rdbA.TabStop = true;
             this.rdbA.UseVisualStyleBackColor = true;
             // 
-            // rdbB
-            // 
-            this.rdbB.AutoSize = true;
-            this.rdbB.Location = new System.Drawing.Point(0, 31);
-            this.rdbB.Name = "rdbB";
-            this.rdbB.Size = new System.Drawing.Size(14, 13);
-            this.rdbB.TabIndex = 3;
-            this.rdbB.TabStop = true;
-            this.rdbB.UseVisualStyleBackColor = true;
-            // 
             // rdbC
             // 
             this.rdbC.AutoSize = true;
@@ -88,15 +88,15 @@
             this.rdbC.TabStop = true;
             this.rdbC.UseVisualStyleBackColor = true;
             // 
-            // rdbD
+            // rdbB
             // 
-            this.rdbD.AutoSize = true;
-            this.rdbD.Location = new System.Drawing.Point(0, 77);
-            this.rdbD.Name = "rdbD";
-            this.rdbD.Size = new System.Drawing.Size(14, 13);
-            this.rdbD.TabIndex = 5;
-            this.rdbD.TabStop = true;
-            this.rdbD.UseVisualStyleBackColor = true;
+            this.rdbB.AutoSize = true;
+            this.rdbB.Location = new System.Drawing.Point(0, 31);
+            this.rdbB.Name = "rdbB";
+            this.rdbB.Size = new System.Drawing.Size(14, 13);
+            this.rdbB.TabIndex = 3;
+            this.rdbB.TabStop = true;
+            this.rdbB.UseVisualStyleBackColor = true;
             // 
             // btnNext
             // 

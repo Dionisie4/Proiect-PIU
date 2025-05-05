@@ -31,7 +31,6 @@
             this.txtNume = new System.Windows.Forms.TextBox();
             this.txtParola = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.lblEroare = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -60,14 +59,6 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // lblEroare
-            // 
-            this.lblEroare.AutoSize = true;
-            this.lblEroare.Location = new System.Drawing.Point(355, 295);
-            this.lblEroare.Name = "lblEroare";
-            this.lblEroare.Size = new System.Drawing.Size(0, 13);
-            this.lblEroare.TabIndex = 3;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -93,7 +84,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblEroare);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtParola);
             this.Controls.Add(this.txtNume);
@@ -109,7 +99,6 @@
         private System.Windows.Forms.TextBox txtNume;
         private System.Windows.Forms.TextBox txtParola;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Label lblEroare;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }

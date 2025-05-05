@@ -30,9 +30,9 @@ namespace Proiect_PIU
             
             if (!test.IncarcaIntrebare())
             {
-                test.SalveazaNota(numeUtilizator, parolaUtilizator); // Salvăm nota utilizatorului
+                test.SalveazaNota(numeUtilizator, parolaUtilizator); 
 
-                lblIntrebare.Text = $"Test terminat! Ai obținut {test.GetPunctajFinal()}/10.";
+                lblIntrebare.Text = $"Test terminat! Ai obtinut {test.GetPunctajFinal()}/10.";
                 grpRaspunsuri.Enabled = false;
                 btnNext.Enabled = false;
                 return;
@@ -62,7 +62,7 @@ namespace Proiect_PIU
 
             if (string.IsNullOrEmpty(raspunsUser))
             {
-                MessageBox.Show("Te rog selectează un răspuns!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Te rog selecteaza un raspuns!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

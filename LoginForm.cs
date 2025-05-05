@@ -31,7 +31,7 @@ namespace Proiect_PIU
             }
             else
             {
-                MessageBox.Show("Autentificare eșuată! Verifică numele și parola.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Autentificare esuata! Verifica numele și parola.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
