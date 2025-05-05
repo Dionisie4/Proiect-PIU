@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Proiect_PIU
 {
@@ -21,7 +22,7 @@ namespace Proiect_PIU
 
         public void SalveazaNota(string numeUtilizator, string parolaUtilizator)
         {
-            managerTest.SalveazaNota(numeUtilizator, parolaUtilizator);
+            UserManager.SalveazaNota(numeUtilizator, GetPunctajFinal());
         }
 
         public bool IncarcaIntrebare()

@@ -22,12 +22,10 @@ namespace Proiect_PIU
             string numeUtilizator = txtNume.Text;
             string parolaUtilizator = txtParola.Text;
 
-            ManagerTest managerTest = new ManagerTest("Utilizatori.txt");
-
-            if (managerTest.VerificaAutentificare(numeUtilizator, parolaUtilizator))
+            List<int> noteUtilizator;
+            if (UserManager.Autentifica(numeUtilizator, parolaUtilizator, out noteUtilizator))
             {
-                
-                TestForm testForm = new TestForm(numeUtilizator, parolaUtilizator); // Transmitem utilizatorul corect
+                TestForm testForm = new TestForm(numeUtilizator, parolaUtilizator);
                 testForm.Show();
                 this.Hide();
             }

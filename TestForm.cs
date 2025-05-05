@@ -15,6 +15,7 @@ namespace Proiect_PIU
         private Test test;
         private string numeUtilizator;
         private string parolaUtilizator;
+        
 
         public TestForm(string nume, string parola)
         {
