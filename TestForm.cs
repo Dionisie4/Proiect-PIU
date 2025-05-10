@@ -15,14 +15,14 @@ namespace Proiect_PIU
         private Test test;
         private string numeUtilizator;
         private string parolaUtilizator;
-        
 
-        public TestForm(string nume, string parola)
+        public TestForm(string nume, string parola, string fisierTest)
         {
             InitializeComponent();
-            test = new Test("Test.txt");
             numeUtilizator = nume;
             parolaUtilizator = parola;
+            // Încarcă setul de întrebări din fișierul selectat
+            test = new Test(fisierTest);
             IncarcaIntrebare();
         }
         private void IncarcaIntrebare()

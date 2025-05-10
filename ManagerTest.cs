@@ -52,7 +52,7 @@ namespace Proiect_PIU
                     raspunsCorect = raspunsAfisat.Split(')')[0]; 
 
             }
-            indexCurent += 1;
+            indexCurent += 4;
             
             return raspunsuri;
         }

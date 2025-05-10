@@ -28,8 +28,10 @@ namespace Proiect_PIU
         public bool IncarcaIntrebare()
         {
             IntrebareCurenta = managerTest.GetIntrebare();
-            if (IntrebareCurenta == null) return false; // Test terminat
-
+            if (IntrebareCurenta == null)
+            {
+                return false;
+            }
             RaspunsuriCurente = managerTest.GetRaspunsuri(out string raspunsCorect);
             RaspunsCorect = raspunsCorect;
 

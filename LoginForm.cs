@@ -25,13 +25,14 @@ namespace Proiect_PIU
             List<int> noteUtilizator;
             if (UserManager.Autentifica(numeUtilizator, parolaUtilizator, out noteUtilizator))
             {
-                TestForm testForm = new TestForm(numeUtilizator, parolaUtilizator);
-                testForm.Show();
+                MenuForm menuForm = new MenuForm(numeUtilizator, parolaUtilizator);
+                menuForm.Show();
                 this.Hide();
             }
             else
             {
                 MessageBox.Show("Autentificare esuata! Verifica numele și parola.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
             }
         }
     }
