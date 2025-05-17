@@ -1,4 +1,9 @@
-﻿namespace Proiect_PIU
+﻿using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Windows.Forms;
+
+
+namespace Proiect_PIU
 {
     partial class TestForm
     {
@@ -16,8 +21,21 @@
             if (disposing && (components != null))
             {
                 components.Dispose();
+                
             }
             base.Dispose(disposing);
+        }   
+
+        private void RotunjesteButon(Button buton, int raza)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(buton.ClientRectangle.Left, buton.ClientRectangle.Top, raza, raza, 180, 90); // Colțul stânga-sus
+            path.AddArc(buton.ClientRectangle.Right - raza, buton.ClientRectangle.Top, raza, raza, 270, 90); // Colțul dreapta-sus
+            path.AddArc(buton.ClientRectangle.Right - raza, buton.ClientRectangle.Bottom - raza, raza, raza, 0, 90); // Colțul dreapta-jos
+            path.AddArc(buton.ClientRectangle.Left, buton.ClientRectangle.Bottom - raza, raza, raza, 90, 90); // Colțul stânga-jos
+            path.CloseFigure();
+
+            buton.Region = new Region(path);
         }
 
         #region Windows Form Designer generated code
@@ -100,12 +118,15 @@
             // 
             // btnNext
             // 
+            this.btnNext.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Location = new System.Drawing.Point(61, 211);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(258, 64);
+            this.btnNext.Size = new System.Drawing.Size(221, 42);
             this.btnNext.TabIndex = 2;
-            this.btnNext.Text = "Next";
-            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Text = "Urmatoarea Intrebare";
+            this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // TestForm

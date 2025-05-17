@@ -57,16 +57,16 @@
             // 
             // txtCautareUtilizator
             // 
-            this.txtCautareUtilizator.Location = new System.Drawing.Point(298, 151);
+            this.txtCautareUtilizator.Location = new System.Drawing.Point(253, 134);
             this.txtCautareUtilizator.Name = "txtCautareUtilizator";
-            this.txtCautareUtilizator.Size = new System.Drawing.Size(180, 20);
+            this.txtCautareUtilizator.Size = new System.Drawing.Size(167, 20);
             this.txtCautareUtilizator.TabIndex = 2;
             // 
             // btnCautaUtilizator
             // 
-            this.btnCautaUtilizator.Location = new System.Drawing.Point(298, 201);
+            this.btnCautaUtilizator.Location = new System.Drawing.Point(59, 113);
             this.btnCautaUtilizator.Name = "btnCautaUtilizator";
-            this.btnCautaUtilizator.Size = new System.Drawing.Size(180, 60);
+            this.btnCautaUtilizator.Size = new System.Drawing.Size(167, 60);
             this.btnCautaUtilizator.TabIndex = 3;
             this.btnCautaUtilizator.Text = "Cauta Utilizator";
             this.btnCautaUtilizator.UseVisualStyleBackColor = true;
@@ -76,7 +76,7 @@
             // 
             this.cmbTeste.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTeste.FormattingEnabled = true;
-            this.cmbTeste.Location = new System.Drawing.Point(59, 122);
+            this.cmbTeste.Location = new System.Drawing.Point(253, 222);
             this.cmbTeste.Name = "cmbTeste";
             this.cmbTeste.Size = new System.Drawing.Size(167, 21);
             this.cmbTeste.TabIndex = 4;
