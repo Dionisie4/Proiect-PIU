@@ -17,28 +17,17 @@ namespace Proiect_PIU
         private string numeUtilizator;
         private string parolaUtilizator;
 
+        
+
         public TestForm(string nume, string parola, string fisierTest)
         {
             InitializeComponent();
             numeUtilizator = nume;
             parolaUtilizator = parola;
-            btnNext.Paint += new PaintEventHandler(btnNext_Paint);
-            // Încarcă setul de întrebări din fișierul selectat
             test = new Test(fisierTest);
+            RotunjesteButon(btnNext, 20);
+
             IncarcaIntrebare();
-        }
-
-        private void btnNext_Paint(object sender, PaintEventArgs e)
-        {
-            GraphicsPath path = new GraphicsPath();
-            int raza = 20;
-            path.AddArc(0, 0, raza, raza, 180, 90);
-            path.AddArc(btnNext.Width - raza, 0, raza, raza, 270, 90);
-            path.AddArc(btnNext.Width - raza, btnNext.Height - raza, raza, raza, 0, 90);
-            path.AddArc(0, btnNext.Height - raza, raza, raza, 90, 90);
-            path.CloseFigure();
-
-            btnNext.Region = new Region(path);
         }
 
         
@@ -88,6 +77,19 @@ namespace Proiect_PIU
 
             
 
+        }
+        private void RotunjesteButon(Button buton, int raza)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(0, 0, raza, raza, 180, 90);
+            path.AddArc(buton.Width - raza, 0, raza, raza, 270, 90);
+            path.AddArc(buton.Width - raza, buton.Height - raza, raza, raza, 0, 90);
+            path.AddArc(0, buton.Height - raza, raza, raza, 90, 90);
+            path.CloseFigure();
+
+            buton.Region = new Region(path);
+            buton.FlatStyle = FlatStyle.Flat;
+            buton.FlatAppearance.BorderSize = 0;
         }
     }
 }

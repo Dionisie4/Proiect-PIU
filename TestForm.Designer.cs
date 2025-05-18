@@ -26,17 +26,7 @@ namespace Proiect_PIU
             base.Dispose(disposing);
         }   
 
-        private void RotunjesteButon(Button buton, int raza)
-        {
-            GraphicsPath path = new GraphicsPath();
-            path.AddArc(buton.ClientRectangle.Left, buton.ClientRectangle.Top, raza, raza, 180, 90); // Colțul stânga-sus
-            path.AddArc(buton.ClientRectangle.Right - raza, buton.ClientRectangle.Top, raza, raza, 270, 90); // Colțul dreapta-sus
-            path.AddArc(buton.ClientRectangle.Right - raza, buton.ClientRectangle.Bottom - raza, raza, raza, 0, 90); // Colțul dreapta-jos
-            path.AddArc(buton.ClientRectangle.Left, buton.ClientRectangle.Bottom - raza, raza, raza, 90, 90); // Colțul stânga-jos
-            path.CloseFigure();
-
-            buton.Region = new Region(path);
-        }
+       
 
         #region Windows Form Designer generated code
 

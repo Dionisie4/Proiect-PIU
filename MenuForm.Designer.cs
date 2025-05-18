@@ -37,22 +37,24 @@
             // 
             // btnAfisareNote
             // 
+            this.btnAfisareNote.BackColor = System.Drawing.Color.IndianRed;
             this.btnAfisareNote.Location = new System.Drawing.Point(59, 12);
             this.btnAfisareNote.Name = "btnAfisareNote";
             this.btnAfisareNote.Size = new System.Drawing.Size(167, 68);
             this.btnAfisareNote.TabIndex = 0;
             this.btnAfisareNote.Text = "Afiseaza Notele";
-            this.btnAfisareNote.UseVisualStyleBackColor = true;
+            this.btnAfisareNote.UseVisualStyleBackColor = false;
             this.btnAfisareNote.Click += new System.EventHandler(this.btnAfisareNote_Click);
             // 
             // btnIncepereTest
             // 
+            this.btnIncepereTest.BackColor = System.Drawing.Color.Orange;
             this.btnIncepereTest.Location = new System.Drawing.Point(59, 201);
             this.btnIncepereTest.Name = "btnIncepereTest";
             this.btnIncepereTest.Size = new System.Drawing.Size(167, 60);
             this.btnIncepereTest.TabIndex = 1;
             this.btnIncepereTest.Text = "Incepe Testul";
-            this.btnIncepereTest.UseVisualStyleBackColor = true;
+            this.btnIncepereTest.UseVisualStyleBackColor = false;
             this.btnIncepereTest.Click += new System.EventHandler(this.btnIncepereTest_Click);
             // 
             // txtCautareUtilizator
@@ -64,12 +66,13 @@
             // 
             // btnCautaUtilizator
             // 
+            this.btnCautaUtilizator.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnCautaUtilizator.Location = new System.Drawing.Point(59, 113);
             this.btnCautaUtilizator.Name = "btnCautaUtilizator";
             this.btnCautaUtilizator.Size = new System.Drawing.Size(167, 60);
             this.btnCautaUtilizator.TabIndex = 3;
             this.btnCautaUtilizator.Text = "Cauta Utilizator";
-            this.btnCautaUtilizator.UseVisualStyleBackColor = true;
+            this.btnCautaUtilizator.UseVisualStyleBackColor = false;
             this.btnCautaUtilizator.Click += new System.EventHandler(this.btnCautaUtilizator_Click);
             // 
             // cmbTeste
