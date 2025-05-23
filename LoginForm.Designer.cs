@@ -49,6 +49,7 @@
             this.txtParola.Name = "txtParola";
             this.txtParola.Size = new System.Drawing.Size(164, 20);
             this.txtParola.TabIndex = 1;
+            this.txtParola.UseSystemPasswordChar = true;
             // 
             // btnLogin
             // 
