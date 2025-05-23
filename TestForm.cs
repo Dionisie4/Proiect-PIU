@@ -13,53 +13,65 @@ namespace Proiect_PIU
 {
     public partial class TestForm: Form
     {
-        private Test test;
+        private QuizTest quizTest;
         private string numeUtilizator;
         private string parolaUtilizator;
-
-        
 
         public TestForm(string nume, string parola, string fisierTest)
         {
             InitializeComponent();
             numeUtilizator = nume;
             parolaUtilizator = parola;
-            test = new Test(fisierTest);
+            quizTest = new QuizTest(fisierTest);
+
+            
             RotunjesteButon(btnNext, 20);
+            RotunjesteButon(btnBack, 20);
+            RotunjesteButon(btnSubmit, 20);
 
             IncarcaIntrebare();
         }
 
-        
+
+
         private void IncarcaIntrebare()
         {
-            
-            if (!test.IncarcaIntrebare())
+            QuizItem item = quizTest.GetCurrentQuizItem();
+            if (item == null)
             {
-                test.SalveazaNota(numeUtilizator, parolaUtilizator); 
-
-                lblIntrebare.Text = $"Test terminat! Ai obtinut {test.GetPunctajFinal()}/10.";
-                grpRaspunsuri.Enabled = false;
-                btnNext.Enabled = false;
+                MessageBox.Show("Nu s-au putut încărca întrebările!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            lblIntrebare.Text = test.IntrebareCurenta;
+            lblIntrebare.Text = item.Intrebare;
+            rdbA.Text = item.Raspunsuri[0];
+            rdbB.Text = item.Raspunsuri[1];
+            rdbC.Text = item.Raspunsuri[2];
+            rdbD.Text = item.Raspunsuri[3];
 
-            rdbA.Text = test.RaspunsuriCurente[0];
-            rdbB.Text = test.RaspunsuriCurente[1];
-            rdbC.Text = test.RaspunsuriCurente[2];
-            rdbD.Text = test.RaspunsuriCurente[3];
+            
+            if (!string.IsNullOrEmpty(item.RaspunsUser))
+            {
+                string raspuns = item.RaspunsUser.ToLower();
+                rdbA.Checked = raspuns == "a";
+                rdbB.Checked = raspuns == "b";
+                rdbC.Checked = raspuns == "c";
+                rdbD.Checked = raspuns == "d";
+            }
+            else
+            {
+                rdbA.Checked = rdbB.Checked = rdbC.Checked = rdbD.Checked = false;
+            }
 
-            rdbA.Checked = false;
-            rdbB.Checked = false;
-            rdbC.Checked = false;
-            rdbD.Checked = false;
+            btnBack.Enabled = quizTest.HasPrevious();
+            
+            btnSubmit.Enabled = quizTest.QuizItems.All(q => !string.IsNullOrEmpty(q.RaspunsUser));
         }
+
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            string raspunsUser = "";
+            string raspunsUser = string.Empty;
 
             if (rdbA.Checked) raspunsUser = "a";
             if (rdbB.Checked) raspunsUser = "b";
@@ -68,16 +80,27 @@ namespace Proiect_PIU
 
             if (string.IsNullOrEmpty(raspunsUser))
             {
-                MessageBox.Show("Te rog selecteaza un raspuns!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selectează un raspuns!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            test.VerificaRaspuns(raspunsUser);
-            IncarcaIntrebare();
-
             
+            QuizItem currentItem = quizTest.GetCurrentQuizItem();
+            currentItem.RaspunsUser = raspunsUser;
 
+            btnSubmit.Enabled = quizTest.QuizItems.All(q => !string.IsNullOrEmpty(q.RaspunsUser));
+
+            if (quizTest.HasNext())
+            {
+                quizTest.CurrentIndex++;
+                IncarcaIntrebare();
+            }
+            else
+            {
+                MessageBox.Show("Aceasta este ultima intrebare!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
+
         private void RotunjesteButon(Button buton, int raza)
         {
             GraphicsPath path = new GraphicsPath();
@@ -91,5 +114,67 @@ namespace Proiect_PIU
             buton.FlatStyle = FlatStyle.Flat;
             buton.FlatAppearance.BorderSize = 0;
         }
+
+        private void TestForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            if (quizTest.HasPrevious())
+            {
+                quizTest.CurrentIndex--;
+                IncarcaIntrebare();
+            }
+            else
+            {
+                MessageBox.Show("Acum esti la prima intrebare!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            
+            if (!quizTest.QuizItems.All(q => !string.IsNullOrEmpty(q.RaspunsUser)))
+            {
+                MessageBox.Show("Completeaza toate intrebarile inainte de submit!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int punctaj = 0;
+            foreach (var item in quizTest.QuizItems)
+            {
+                int indexUser = GetIndexFromLetter(item.RaspunsUser);
+                
+                if (indexUser != -1 && item.Raspunsuri[indexUser].Equals(item.RaspunsCorect, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    punctaj++;
+                }
+            }
+
+            MessageBox.Show($"Test terminat! Scor: {punctaj} din {quizTest.QuizItems.Count}", "Rezultate", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            
+            ReviewForm review = new ReviewForm(quizTest.QuizItems);
+            review.Show();
+            this.Close();
+        }
+
+        private int GetIndexFromLetter(string letter)
+        {
+            if (string.IsNullOrEmpty(letter)) return -1;
+            letter = letter.ToLower();
+            if (letter == "a") return 0;
+            if (letter == "b") return 1;
+            if (letter == "c") return 2;
+            if (letter == "d") return 3;
+            return -1;
+        }
+
+
+
+
     }
 }
+

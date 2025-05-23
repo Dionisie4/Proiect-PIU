@@ -33,7 +33,7 @@ namespace Proiect_PIU
             
             cmbTeste.Items.Add("Test.txt");
             cmbTeste.Items.Add("Biologie.txt");
-            cmbTeste.Items.Add("Matematica.txt");
+            cmbTeste.Items.Add("Chimie.txt");
 
             
         }
@@ -96,33 +96,33 @@ namespace Proiect_PIU
             string cautare = txtCautareUtilizator.Text.Trim();
             if (string.IsNullOrEmpty(cautare))
             {
-                MessageBox.Show("Introdu un text pentru cautare.", "Atenție", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Introdu un text pentru cautare.", "Atentie", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             string caleFisier = "Utilizatori.txt";
             if (!File.Exists(caleFisier))
             {
-                MessageBox.Show("Fisierul de utilizatori nu a fost gasit.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Fisierul cu utilizatori nu a fost gasit.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             List<string> rezultate = new List<string>();
             foreach (var linie in File.ReadLines(caleFisier))
             {
-                // Presupunem că utilizatorul este pe prima parte a liniei, separate prin '.'
+                
                 string[] parti = linie.Split('.');
                 if (parti.Length == 3 && parti[0].IndexOf(cautare, StringComparison.OrdinalIgnoreCase) >= 0)
                 {
-                    rezultate.Add($"{parti[0]} - Note: {parti[2]}"); // Afișează doar numele și notele
+                    rezultate.Add($"{parti[0]} - Note: {parti[2]}"); 
                 }
             }
 
-            // Afișează rezultatele (poți alege aici să le afișezi într-un ListBox sau într-un MessageBox)
+           
             if (rezultate.Count > 0)
             {
                 string mesaj = string.Join(Environment.NewLine, rezultate);
-                MessageBox.Show(mesaj, "Utilizatori găsiți", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(mesaj, "Utilizatori gasiți", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

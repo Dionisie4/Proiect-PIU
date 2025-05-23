@@ -43,13 +43,15 @@ namespace Proiect_PIU
             this.rdbC = new System.Windows.Forms.RadioButton();
             this.rdbB = new System.Windows.Forms.RadioButton();
             this.btnNext = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.grpRaspunsuri.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblIntrebare
             // 
             this.lblIntrebare.AutoSize = true;
-            this.lblIntrebare.Location = new System.Drawing.Point(58, 42);
+            this.lblIntrebare.Location = new System.Drawing.Point(59, 37);
             this.lblIntrebare.Name = "lblIntrebare";
             this.lblIntrebare.Size = new System.Drawing.Size(0, 13);
             this.lblIntrebare.TabIndex = 0;
@@ -60,16 +62,16 @@ namespace Proiect_PIU
             this.grpRaspunsuri.Controls.Add(this.rdbA);
             this.grpRaspunsuri.Controls.Add(this.rdbC);
             this.grpRaspunsuri.Controls.Add(this.rdbB);
-            this.grpRaspunsuri.Location = new System.Drawing.Point(61, 99);
+            this.grpRaspunsuri.Location = new System.Drawing.Point(62, 64);
             this.grpRaspunsuri.Name = "grpRaspunsuri";
-            this.grpRaspunsuri.Size = new System.Drawing.Size(356, 96);
+            this.grpRaspunsuri.Size = new System.Drawing.Size(379, 101);
             this.grpRaspunsuri.TabIndex = 1;
             this.grpRaspunsuri.TabStop = false;
             // 
             // rdbD
             // 
             this.rdbD.AutoSize = true;
-            this.rdbD.Location = new System.Drawing.Point(0, 77);
+            this.rdbD.Location = new System.Drawing.Point(6, 73);
             this.rdbD.Name = "rdbD";
             this.rdbD.Size = new System.Drawing.Size(14, 13);
             this.rdbD.TabIndex = 5;
@@ -79,7 +81,7 @@ namespace Proiect_PIU
             // rdbA
             // 
             this.rdbA.AutoSize = true;
-            this.rdbA.Location = new System.Drawing.Point(0, 8);
+            this.rdbA.Location = new System.Drawing.Point(6, 16);
             this.rdbA.Name = "rdbA";
             this.rdbA.Size = new System.Drawing.Size(14, 13);
             this.rdbA.TabIndex = 2;
@@ -89,7 +91,7 @@ namespace Proiect_PIU
             // rdbC
             // 
             this.rdbC.AutoSize = true;
-            this.rdbC.Location = new System.Drawing.Point(0, 54);
+            this.rdbC.Location = new System.Drawing.Point(6, 54);
             this.rdbC.Name = "rdbC";
             this.rdbC.Size = new System.Drawing.Size(14, 13);
             this.rdbC.TabIndex = 4;
@@ -99,7 +101,7 @@ namespace Proiect_PIU
             // rdbB
             // 
             this.rdbB.AutoSize = true;
-            this.rdbB.Location = new System.Drawing.Point(0, 31);
+            this.rdbB.Location = new System.Drawing.Point(6, 35);
             this.rdbB.Name = "rdbB";
             this.rdbB.Size = new System.Drawing.Size(14, 13);
             this.rdbB.TabIndex = 3;
@@ -111,24 +113,49 @@ namespace Proiect_PIU
             this.btnNext.BackColor = System.Drawing.Color.PaleGreen;
             this.btnNext.FlatAppearance.BorderSize = 0;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Location = new System.Drawing.Point(61, 211);
+            this.btnNext.Location = new System.Drawing.Point(260, 194);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(221, 42);
+            this.btnNext.Size = new System.Drawing.Size(181, 42);
             this.btnNext.TabIndex = 2;
-            this.btnNext.Text = "Urmatoarea Intrebare";
+            this.btnNext.Text = "Intrebarea urmatoare";
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnBack.Location = new System.Drawing.Point(62, 194);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(173, 42);
+            this.btnBack.TabIndex = 3;
+            this.btnBack.Text = "Intrebarea anterioara";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.BackColor = System.Drawing.Color.Turquoise;
+            this.btnSubmit.Location = new System.Drawing.Point(211, 285);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.TabIndex = 4;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(805, 450);
+            this.ClientSize = new System.Drawing.Size(557, 368);
+            this.Controls.Add(this.btnSubmit);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.grpRaspunsuri);
             this.Controls.Add(this.lblIntrebare);
             this.Name = "TestForm";
-            this.Text = "TestForm";
+            this.Text = "Acum esti in test, mult succes!";
+            this.Load += new System.EventHandler(this.TestForm_Load);
             this.grpRaspunsuri.ResumeLayout(false);
             this.grpRaspunsuri.PerformLayout();
             this.ResumeLayout(false);
@@ -145,5 +172,7 @@ namespace Proiect_PIU
         private System.Windows.Forms.RadioButton rdbC;
         private System.Windows.Forms.RadioButton rdbB;
         private System.Windows.Forms.Button btnNext;
+        private Button btnBack;
+        private Button btnSubmit;
     }
 }

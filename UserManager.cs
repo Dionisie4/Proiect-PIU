@@ -23,7 +23,9 @@ namespace Proiect_PIU
                 var parti = linie.Split('.');
                 if (parti.Length == 3 && parti[0] == nume && parti[1] == parola)
                 {
-                    note = parti[2].Split(',').Select(int.Parse).ToList();
+                    note = string.IsNullOrEmpty(parti[2])
+                   ? new List<int>()
+                   : parti[2].Split(',').Select(int.Parse).ToList();
                     return true;
                 }
             }

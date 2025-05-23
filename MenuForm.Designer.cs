@@ -95,7 +95,7 @@
             this.Controls.Add(this.btnIncepereTest);
             this.Controls.Add(this.btnAfisareNote);
             this.Name = "MenuForm";
-            this.Text = "MeniuForm";
+            this.Text = "Meniu";
             this.ResumeLayout(false);
             this.PerformLayout();
 
