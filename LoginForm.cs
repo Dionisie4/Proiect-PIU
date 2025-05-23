@@ -19,6 +19,7 @@ namespace Proiect_PIU
             InitializeComponent();
 
             RotunjesteButon(btnLogin, 50);
+            RotunjesteButon(btnSignIn, 50);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

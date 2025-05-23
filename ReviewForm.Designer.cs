@@ -51,7 +51,8 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.listView1);
             this.Name = "ReviewForm";
-            this.Text = "Raspunsuri Corecte";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Raspunsurile corecte sunt:";
             this.Load += new System.EventHandler(this.ReviewForm_Load_1);
             this.ResumeLayout(false);
 

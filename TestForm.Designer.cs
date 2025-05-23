@@ -154,6 +154,7 @@ namespace Proiect_PIU
             this.Controls.Add(this.grpRaspunsuri);
             this.Controls.Add(this.lblIntrebare);
             this.Name = "TestForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Acum esti in test, mult succes!";
             this.Load += new System.EventHandler(this.TestForm_Load);
             this.grpRaspunsuri.ResumeLayout(false);

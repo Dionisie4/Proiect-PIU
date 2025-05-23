@@ -103,6 +103,7 @@
             this.Controls.Add(this.txtParola);
             this.Controls.Add(this.txtNume);
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Page";
             this.ResumeLayout(false);
             this.PerformLayout();

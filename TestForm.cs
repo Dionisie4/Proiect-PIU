@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,8 +26,8 @@ namespace Proiect_PIU
             quizTest = new QuizTest(fisierTest);
 
             
-            RotunjesteButon(btnNext, 20);
-            RotunjesteButon(btnBack, 20);
+            RotunjesteButon(btnNext, 25);
+            RotunjesteButon(btnBack, 25);
             RotunjesteButon(btnSubmit, 20);
 
             IncarcaIntrebare();
@@ -68,7 +69,7 @@ namespace Proiect_PIU
             btnSubmit.Enabled = quizTest.QuizItems.All(q => !string.IsNullOrEmpty(q.RaspunsUser));
         }
 
-
+        
         private void btnNext_Click(object sender, EventArgs e)
         {
             string raspunsUser = string.Empty;
@@ -155,7 +156,8 @@ namespace Proiect_PIU
 
             MessageBox.Show($"Test terminat! Scor: {punctaj} din {quizTest.QuizItems.Count}", "Rezultate", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            
+            UserManager.SalveazaNota(numeUtilizator, punctaj);
+
             ReviewForm review = new ReviewForm(quizTest.QuizItems);
             review.Show();
             this.Close();

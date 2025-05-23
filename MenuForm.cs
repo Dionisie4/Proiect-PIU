@@ -24,8 +24,8 @@ namespace Proiect_PIU
             parolaUtilizator = parola;
             this.Load += MenuForm_Load;
             RotunjesteButon(btnAfisareNote, 50);
-            RotunjesteButon(btnCautaUtilizator, 20);
-            RotunjesteButon(btnIncepereTest, 10);
+            RotunjesteButon(btnCautaUtilizator, 50);
+            RotunjesteButon(btnIncepereTest, 50);
         }
 
         private void MenuForm_Load(object sender, EventArgs e)

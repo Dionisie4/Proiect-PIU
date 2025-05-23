@@ -38,9 +38,9 @@
             // btnAfisareNote
             // 
             this.btnAfisareNote.BackColor = System.Drawing.Color.IndianRed;
-            this.btnAfisareNote.Location = new System.Drawing.Point(59, 12);
+            this.btnAfisareNote.Location = new System.Drawing.Point(397, 34);
             this.btnAfisareNote.Name = "btnAfisareNote";
-            this.btnAfisareNote.Size = new System.Drawing.Size(167, 68);
+            this.btnAfisareNote.Size = new System.Drawing.Size(172, 60);
             this.btnAfisareNote.TabIndex = 0;
             this.btnAfisareNote.Text = "Afiseaza Notele";
             this.btnAfisareNote.UseVisualStyleBackColor = false;
@@ -49,9 +49,9 @@
             // btnIncepereTest
             // 
             this.btnIncepereTest.BackColor = System.Drawing.Color.Orange;
-            this.btnIncepereTest.Location = new System.Drawing.Point(59, 201);
+            this.btnIncepereTest.Location = new System.Drawing.Point(27, 34);
             this.btnIncepereTest.Name = "btnIncepereTest";
-            this.btnIncepereTest.Size = new System.Drawing.Size(167, 60);
+            this.btnIncepereTest.Size = new System.Drawing.Size(154, 60);
             this.btnIncepereTest.TabIndex = 1;
             this.btnIncepereTest.Text = "Incepe Testul";
             this.btnIncepereTest.UseVisualStyleBackColor = false;
@@ -59,7 +59,7 @@
             // 
             // txtCautareUtilizator
             // 
-            this.txtCautareUtilizator.Location = new System.Drawing.Point(253, 134);
+            this.txtCautareUtilizator.Location = new System.Drawing.Point(200, 112);
             this.txtCautareUtilizator.Name = "txtCautareUtilizator";
             this.txtCautareUtilizator.Size = new System.Drawing.Size(167, 20);
             this.txtCautareUtilizator.TabIndex = 2;
@@ -67,7 +67,7 @@
             // btnCautaUtilizator
             // 
             this.btnCautaUtilizator.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnCautaUtilizator.Location = new System.Drawing.Point(59, 113);
+            this.btnCautaUtilizator.Location = new System.Drawing.Point(200, 34);
             this.btnCautaUtilizator.Name = "btnCautaUtilizator";
             this.btnCautaUtilizator.Size = new System.Drawing.Size(167, 60);
             this.btnCautaUtilizator.TabIndex = 3;
@@ -79,22 +79,23 @@
             // 
             this.cmbTeste.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTeste.FormattingEnabled = true;
-            this.cmbTeste.Location = new System.Drawing.Point(253, 222);
+            this.cmbTeste.Location = new System.Drawing.Point(27, 112);
             this.cmbTeste.Name = "cmbTeste";
-            this.cmbTeste.Size = new System.Drawing.Size(167, 21);
+            this.cmbTeste.Size = new System.Drawing.Size(154, 21);
             this.cmbTeste.TabIndex = 4;
             // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 323);
+            this.ClientSize = new System.Drawing.Size(651, 224);
             this.Controls.Add(this.cmbTeste);
             this.Controls.Add(this.btnCautaUtilizator);
             this.Controls.Add(this.txtCautareUtilizator);
             this.Controls.Add(this.btnIncepereTest);
             this.Controls.Add(this.btnAfisareNote);
             this.Name = "MenuForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meniu";
             this.ResumeLayout(false);
             this.PerformLayout();
