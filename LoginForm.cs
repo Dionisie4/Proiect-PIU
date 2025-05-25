@@ -17,9 +17,9 @@ namespace Proiect_PIU
         public LoginForm()
         {
             InitializeComponent();
-
             RotunjesteButon(btnLogin, 50);
             RotunjesteButon(btnSignIn, 50);
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -90,5 +90,13 @@ namespace Proiect_PIU
 
             MessageBox.Show("Cont creat cu succes!", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void autorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hagiu Dionisie - 3124a","Info");
+        }
+
+       
+
     }
 }

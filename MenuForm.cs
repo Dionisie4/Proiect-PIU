@@ -22,10 +22,40 @@ namespace Proiect_PIU
             InitializeComponent();
             numeUtilizator = nume;
             parolaUtilizator = parola;
+
+            btnIncepereTest.BackColor = ColorTranslator.FromHtml("#FFFACD"); 
+            btnCautaUtilizator.BackColor = ColorTranslator.FromHtml("#ADD8E6"); 
+            btnAfisareNote.BackColor = ColorTranslator.FromHtml("#FFB6C1"); 
+            btnBackcatreLogin.BackColor = ColorTranslator.FromHtml("#D8BFD8"); 
+
+            
+            SeteazaFlatStyle(btnIncepereTest);
+            SeteazaFlatStyle(btnCautaUtilizator);
+            SeteazaFlatStyle(btnAfisareNote);
+            SeteazaFlatStyle(btnBackcatreLogin);
+
+            SeteazaFont(btnIncepereTest, "Segoe UI", 11f, FontStyle.Bold);
+            SeteazaFont(btnCautaUtilizator, "Segoe UI", 11f);
+            SeteazaFont(btnAfisareNote, "Segoe UI", 11f);
+            SeteazaFont(btnBackcatreLogin, "Segoe UI", 10f); 
+
+
             this.Load += MenuForm_Load;
-            RotunjesteButon(btnAfisareNote, 50);
-            RotunjesteButon(btnCautaUtilizator, 50);
-            RotunjesteButon(btnIncepereTest, 50);
+            RotunjesteButon(btnAfisareNote, 30);
+            RotunjesteButon(btnCautaUtilizator, 30);
+            RotunjesteButon(btnIncepereTest, 30);
+            RotunjesteButon(btnBackcatreLogin, 20);
+        }
+
+        private void SeteazaFlatStyle(Button btn)
+        {
+            btn.FlatStyle = FlatStyle.Flat;
+            btn.FlatAppearance.BorderSize = 0;
+        }
+
+        private void SeteazaFont(Control control, string fontName, float marime, FontStyle stil = FontStyle.Regular)
+        {
+            control.Font = new Font(fontName, marime, stil);
         }
 
         private void MenuForm_Load(object sender, EventArgs e)
@@ -128,6 +158,13 @@ namespace Proiect_PIU
             {
                 MessageBox.Show("Nu s-au gasit utilizatori care să corespunda criteriilor.", "Rezultate", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoginForm login = new LoginForm();
+            login.Show();
+            this.Close();
         }
     }
 }

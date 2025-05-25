@@ -45,6 +45,7 @@ namespace Proiect_PIU
             this.btnNext = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.btnBackcatreMeniu = new System.Windows.Forms.Button();
             this.grpRaspunsuri.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,11 +144,22 @@ namespace Proiect_PIU
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
+            // btnBackcatreMeniu
+            // 
+            this.btnBackcatreMeniu.Location = new System.Drawing.Point(326, 285);
+            this.btnBackcatreMeniu.Name = "btnBackcatreMeniu";
+            this.btnBackcatreMeniu.Size = new System.Drawing.Size(115, 23);
+            this.btnBackcatreMeniu.TabIndex = 5;
+            this.btnBackcatreMeniu.Text = "Inapoi catre meniu";
+            this.btnBackcatreMeniu.UseVisualStyleBackColor = true;
+            this.btnBackcatreMeniu.Click += new System.EventHandler(this.btnBackcatreMeniu_Click);
+            // 
             // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(557, 368);
+            this.Controls.Add(this.btnBackcatreMeniu);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnNext);
@@ -175,5 +187,6 @@ namespace Proiect_PIU
         private System.Windows.Forms.Button btnNext;
         private Button btnBack;
         private Button btnSubmit;
+        private Button btnBackcatreMeniu;
     }
 }

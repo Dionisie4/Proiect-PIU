@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -10,15 +11,35 @@ namespace Proiect_PIU
     {
         private List<QuizItem> quizItems;
 
-        
-        public ReviewForm(List<QuizItem> quizItems)
+        private string numeUtilizator;
+        private string parolaUtilizator;
+
+        public ReviewForm(List<QuizItem> quizItems, string nume, string parola)
         {
             InitializeComponent();
             this.quizItems = quizItems;
+            this.numeUtilizator = nume;
+            this.parolaUtilizator = parola;
             this.Load += new System.EventHandler(this.ReviewForm_Load);
+
+            RotunjesteButon(BtnBackcatreMeniu, 30);
+            BtnBackcatreMeniu.BackColor = ColorTranslator.FromHtml("#D8BFD8");
 
         }
 
+        private void RotunjesteButon(Button buton, int raza)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(0, 0, raza, raza, 180, 90);
+            path.AddArc(buton.Width - raza, 0, raza, raza, 270, 90);
+            path.AddArc(buton.Width - raza, buton.Height - raza, raza, raza, 0, 90);
+            path.AddArc(0, buton.Height - raza, raza, raza, 90, 90);
+            path.CloseFigure();
+
+            buton.Region = new Region(path);
+            buton.FlatStyle = FlatStyle.Flat;
+            buton.FlatAppearance.BorderSize = 0;
+        }
         private void ReviewForm_Load(object sender, EventArgs e)
         {
             
@@ -79,6 +100,13 @@ namespace Proiect_PIU
         private void ReviewForm_Load_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnBackcatreMeniu_Click(object sender, EventArgs e)
+        {
+            MenuForm meniu = new MenuForm(numeUtilizator, parolaUtilizator);
+            meniu.Show();
+            this.Close();
         }
     }
 }

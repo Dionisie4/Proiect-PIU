@@ -29,6 +29,14 @@ namespace Proiect_PIU
             RotunjesteButon(btnNext, 25);
             RotunjesteButon(btnBack, 25);
             RotunjesteButon(btnSubmit, 20);
+            RotunjesteButon(btnBackcatreMeniu, 15);
+
+            btnBackcatreMeniu.BackColor = ColorTranslator.FromHtml("#D8BFD8");
+
+            this.rdbA.CheckedChanged += new System.EventHandler(this.RaspunsSelectat);
+            this.rdbB.CheckedChanged += new System.EventHandler(this.RaspunsSelectat);
+            this.rdbC.CheckedChanged += new System.EventHandler(this.RaspunsSelectat);
+            this.rdbD.CheckedChanged += new System.EventHandler(this.RaspunsSelectat);
 
             IncarcaIntrebare();
         }
@@ -65,11 +73,11 @@ namespace Proiect_PIU
             }
 
             btnBack.Enabled = quizTest.HasPrevious();
-            
+
             btnSubmit.Enabled = quizTest.QuizItems.All(q => !string.IsNullOrEmpty(q.RaspunsUser));
         }
 
-        
+
         private void btnNext_Click(object sender, EventArgs e)
         {
             string raspunsUser = string.Empty;
@@ -89,7 +97,7 @@ namespace Proiect_PIU
             QuizItem currentItem = quizTest.GetCurrentQuizItem();
             currentItem.RaspunsUser = raspunsUser;
 
-            btnSubmit.Enabled = quizTest.QuizItems.All(q => !string.IsNullOrEmpty(q.RaspunsUser));
+            
 
             if (quizTest.HasNext())
             {
@@ -116,6 +124,24 @@ namespace Proiect_PIU
             buton.FlatAppearance.BorderSize = 0;
         }
 
+        private void RaspunsSelectat(object sender, EventArgs e)
+        {
+            string raspunsUser = null;
+            if (rdbA.Checked) raspunsUser = "a";
+            if (rdbB.Checked) raspunsUser = "b";
+            if (rdbC.Checked) raspunsUser = "c";
+            if (rdbD.Checked) raspunsUser = "d";
+
+            if (!string.IsNullOrEmpty(raspunsUser))
+            {
+                quizTest.QuizItems[quizTest.CurrentIndex].RaspunsUser = raspunsUser;
+            }
+
+            
+            btnSubmit.Enabled = quizTest.QuizItems.All(q => !string.IsNullOrEmpty(q.RaspunsUser));
+        }
+
+
         private void TestForm_Load(object sender, EventArgs e)
         {
 
@@ -130,7 +156,7 @@ namespace Proiect_PIU
             }
             else
             {
-                MessageBox.Show("Acum esti la prima intrebare!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Esti la prima intrebare!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -158,9 +184,10 @@ namespace Proiect_PIU
 
             UserManager.SalveazaNota(numeUtilizator, punctaj);
 
-            ReviewForm review = new ReviewForm(quizTest.QuizItems);
+            ReviewForm review = new ReviewForm(quizTest.QuizItems, numeUtilizator, parolaUtilizator);
             review.Show();
             this.Close();
+
         }
 
         private int GetIndexFromLetter(string letter)
@@ -174,9 +201,12 @@ namespace Proiect_PIU
             return -1;
         }
 
-
-
-
+        private void btnBackcatreMeniu_Click(object sender, EventArgs e)
+        {
+            MenuForm meniu = new MenuForm(numeUtilizator, parolaUtilizator);
+            meniu.Show();
+            this.Close();
+        }
     }
 }
 

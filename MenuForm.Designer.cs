@@ -33,14 +33,15 @@
             this.txtCautareUtilizator = new System.Windows.Forms.TextBox();
             this.btnCautaUtilizator = new System.Windows.Forms.Button();
             this.cmbTeste = new System.Windows.Forms.ComboBox();
+            this.btnBackcatreLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAfisareNote
             // 
             this.btnAfisareNote.BackColor = System.Drawing.Color.IndianRed;
-            this.btnAfisareNote.Location = new System.Drawing.Point(397, 34);
+            this.btnAfisareNote.Location = new System.Drawing.Point(397, 50);
             this.btnAfisareNote.Name = "btnAfisareNote";
-            this.btnAfisareNote.Size = new System.Drawing.Size(172, 60);
+            this.btnAfisareNote.Size = new System.Drawing.Size(172, 44);
             this.btnAfisareNote.TabIndex = 0;
             this.btnAfisareNote.Text = "Afiseaza Notele";
             this.btnAfisareNote.UseVisualStyleBackColor = false;
@@ -49,9 +50,9 @@
             // btnIncepereTest
             // 
             this.btnIncepereTest.BackColor = System.Drawing.Color.Orange;
-            this.btnIncepereTest.Location = new System.Drawing.Point(27, 34);
+            this.btnIncepereTest.Location = new System.Drawing.Point(27, 50);
             this.btnIncepereTest.Name = "btnIncepereTest";
-            this.btnIncepereTest.Size = new System.Drawing.Size(154, 60);
+            this.btnIncepereTest.Size = new System.Drawing.Size(154, 44);
             this.btnIncepereTest.TabIndex = 1;
             this.btnIncepereTest.Text = "Incepe Testul";
             this.btnIncepereTest.UseVisualStyleBackColor = false;
@@ -67,9 +68,9 @@
             // btnCautaUtilizator
             // 
             this.btnCautaUtilizator.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnCautaUtilizator.Location = new System.Drawing.Point(200, 34);
+            this.btnCautaUtilizator.Location = new System.Drawing.Point(200, 50);
             this.btnCautaUtilizator.Name = "btnCautaUtilizator";
-            this.btnCautaUtilizator.Size = new System.Drawing.Size(167, 60);
+            this.btnCautaUtilizator.Size = new System.Drawing.Size(167, 44);
             this.btnCautaUtilizator.TabIndex = 3;
             this.btnCautaUtilizator.Text = "Cauta Utilizator";
             this.btnCautaUtilizator.UseVisualStyleBackColor = false;
@@ -84,11 +85,22 @@
             this.cmbTeste.Size = new System.Drawing.Size(154, 21);
             this.cmbTeste.TabIndex = 4;
             // 
+            // btnBackcatreLogin
+            // 
+            this.btnBackcatreLogin.Location = new System.Drawing.Point(397, 109);
+            this.btnBackcatreLogin.Name = "btnBackcatreLogin";
+            this.btnBackcatreLogin.Size = new System.Drawing.Size(172, 24);
+            this.btnBackcatreLogin.TabIndex = 5;
+            this.btnBackcatreLogin.Text = "Inapoi catre Login";
+            this.btnBackcatreLogin.UseVisualStyleBackColor = true;
+            this.btnBackcatreLogin.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(651, 224);
+            this.ClientSize = new System.Drawing.Size(642, 199);
+            this.Controls.Add(this.btnBackcatreLogin);
             this.Controls.Add(this.cmbTeste);
             this.Controls.Add(this.btnCautaUtilizator);
             this.Controls.Add(this.txtCautareUtilizator);
@@ -109,5 +121,6 @@
         private System.Windows.Forms.TextBox txtCautareUtilizator;
         private System.Windows.Forms.Button btnCautaUtilizator;
         private System.Windows.Forms.ComboBox cmbTeste;
+        private System.Windows.Forms.Button btnBackcatreLogin;
     }
 }
